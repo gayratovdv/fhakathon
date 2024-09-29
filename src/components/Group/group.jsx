@@ -1,7 +1,7 @@
 import React from "react";
 import "./group.css";
 import Images from "../../utils/images";
-
+import { Link } from "react-router-dom";
 const GroupCard = () => {
   return (
     <div className="group-card">
@@ -25,7 +25,14 @@ const GroupCard = () => {
             <h3>Vaqt</h3>
             <p>17:00</p>
           </div>
+<<<<<<< HEAD
           <button className="group__card--card-button">Tekshirish</button>
+=======
+          <button className="group__card--card-button">
+            {" "}
+            <Link to="/home/homeworks">Проверять</Link>
+          </button>
+>>>>>>> db3781506288785f3f5098656a8e9df163d5e0fd
         </div>
         <div className="group__card--card">
           <div className="group__card--card-content">
@@ -41,7 +48,14 @@ const GroupCard = () => {
             <h3>Vaqt</h3>
             <p>17:00</p>
           </div>
+<<<<<<< HEAD
           <button className="group__card--card-button">Tekshirish</button>
+=======
+          <button className="group__card--card-button">
+            {" "}
+            <Link to="/home/homeworks">Проверять</Link>
+          </button>
+>>>>>>> db3781506288785f3f5098656a8e9df163d5e0fd
         </div>
         <div className="group__card--card">
           <div className="group__card--card-content">
@@ -57,7 +71,14 @@ const GroupCard = () => {
             <h3>Vaqt</h3>
             <p>17:00</p>
           </div>
+<<<<<<< HEAD
           <button className="group__card--card-button">Tekshirish</button>
+=======
+          <button className="group__card--card-button">
+            {" "}
+            <Link to="/home/homeworks">Проверять</Link>
+          </button>
+>>>>>>> db3781506288785f3f5098656a8e9df163d5e0fd
         </div>
         <div className="group__card--card">
           <div className="group__card--card-content">
@@ -73,7 +94,13 @@ const GroupCard = () => {
             <h3>Vaqt</h3>
             <p>17:00</p>
           </div>
+<<<<<<< HEAD
           <button className="group__card--card-button">Tekshirish</button>
+=======
+          <button className="group__card--card-button">
+            <Link to="/home/homeworks">Проверять</Link>
+          </button>
+>>>>>>> db3781506288785f3f5098656a8e9df163d5e0fd
         </div>
       </div>
     </div>
