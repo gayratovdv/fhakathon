@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Register from "./components/Register/Register";
-import Privite_route from "./components/Register/Privite_route";
-import Navbar from "./components/navbar/Navbar";
+import Register from "./components/Register/register";
+import Privite_route from "./components/Register/privite_route";
+import Navbar from "./components/navbar/navbar";
 import GroupsPage from "./pages/Groups/group";
 import Homework from "./components/Homework/Homework";
+import StudentCard from "./pages/Students/students";
+import NotFoundPage from './pages/NotFound/notfound';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,6 +37,22 @@ const App = () => {
 
               <Homework />
             </Privite_route>
+          }
+        />
+        <Route
+          path="/home/students"
+          element={
+            <Privite_route isAuthenticated={isAuthenticated}>
+              <Navbar />
+
+              <StudentCard />
+            </Privite_route>
+          }
+        />
+        <Route
+          path="/*"
+          element={
+            <NotFoundPage />
           }
         />
       </Routes>

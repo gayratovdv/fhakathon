@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/Sidebar/sidebar";
 import GroupCard from "../../components/Group/group";
 import "./groups.css";

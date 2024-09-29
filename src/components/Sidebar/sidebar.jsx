@@ -8,11 +8,10 @@ const Sidebar = () => {
       <ul className="sidebar__list">
         <li className="active">
           <img src={Images.groupImage} alt="Image1" />
-          Панель Приборов
+          Boshqaruv paneli
         </li>
         <li>
-          <img src={Images.salaryImage} alt="Image1" />
-          Salary</li>
+          <img src={Images.salaryImage} alt="Image1" />Ish haqi</li>
       </ul>
     </div>
   );

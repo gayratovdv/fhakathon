@@ -1,0 +1,88 @@
+/* Card.css */
+.card {
+  width: 100%;
+  max-width: 950px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.refresh-btn {
+  padding: 5px 15px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.limit {
+  font-weight: bold;
+  color: #ff5733; /* Red limit color */
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table th,
+.student-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.student-table th {
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+}
+
+.student-table td {
+  font-size: 14px;
+  color: #555;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+}
+
+.coin-btn {
+  padding: 8px;
+  background-color: #2196f3; /* Blue button color */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.coin-btn.minus {
+  background-color: #e74c3c; /* Red button */
+}
+
+.coin-btn.plus {
+  background-color: #4caf50; /* Green button */
+}
+
+.coin-btn:hover {
+  opacity: 0.8;
+}

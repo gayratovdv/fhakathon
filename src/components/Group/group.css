@@ -52,8 +52,8 @@
 .group__card--card-wrapper {
   display: flex;
   justify-content: space-between;
+  gap: 75px;
   align-items: center;
-  gap: 120px;
   margin: 5px 0;
 }
 
@@ -78,5 +78,6 @@
 
 .group__content--wrapper {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
