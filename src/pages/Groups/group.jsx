@@ -1,8 +1,8 @@
-import React from 'react'
-import Navbar from '../../components/Navbar/navbar';
-import Sidebar from '../../components/Sidebar/sidebar';
-import GroupCard from '../../components/Group/group';
-import "./groups.css"
+import React from "react";
+import Navbar from "../../components/navbar/Navbar";
+import Sidebar from "../../components/Sidebar/sidebar";
+import GroupCard from "../../components/Group/group";
+import "./groups.css";
 
 const GroupsPage = () => {
   return (
@@ -12,7 +12,7 @@ const GroupsPage = () => {
         <GroupCard />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default GroupsPage
+export default GroupsPage;

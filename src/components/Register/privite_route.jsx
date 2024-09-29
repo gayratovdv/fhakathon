@@ -1,7 +1,11 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 
-const privite_route = () => {
-  return <div></div>;
+const Privite_route = ({ isAuthenticated, children }) => {
+  if (!isAuthenticated) {
+    return <Navigate to="/" />;
+  }
+  return children;
 };
 
-export default privite_route;
+export default Privite_route;
