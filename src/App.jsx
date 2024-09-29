@@ -23,7 +23,7 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/fhakathon"
+        path="/"
         element={<Register setIsAuthenticated={setIsAuthenticated} />}
       />
 

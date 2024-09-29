@@ -18,7 +18,13 @@ const Navbar = () => {
               </option>
             </select>
             <p>Sunnatbek Yusupov</p>
-            <Link style={{color: "black", textdecoration: "none"}} to="/"> <IoIosLogOut /></Link>
+            <Link
+              style={{ color: "black", textdecoration: "none" }}
+              to="/fhakathon"
+            >
+              {" "}
+              <IoIosLogOut />
+            </Link>
           </div>
         </div>
       </div>
