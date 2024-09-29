@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fhakathon/static/css/main.d471f43b.css",
+    "main.js": "/fhakathon/static/js/main.217a1468.js",
+    "static/media/image 18.png": "/fhakathon/static/media/image 18.4809ce7be60e7630fb00.png",
+    "static/media/image 3.png": "/fhakathon/static/media/image 3.d54068613e11602f8224.png",
+    "index.html": "/fhakathon/index.html",
+    "main.d471f43b.css.map": "/fhakathon/static/css/main.d471f43b.css.map",
+    "main.217a1468.js.map": "/fhakathon/static/js/main.217a1468.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d471f43b.css",
+    "static/js/main.217a1468.js"
+  ]
+}
