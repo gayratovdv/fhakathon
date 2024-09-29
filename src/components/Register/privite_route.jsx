@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 const Privite_route = ({ isAuthenticated, children }) => {
   if (!isAuthenticated) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
   return children;
 };

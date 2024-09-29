@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom"; // React Router'dan useNavigate import qilamiz
+import { useNavigate } from "react-router-dom";
 import Photo from "../../assets/image 18.png";
 
 // Styled Components
@@ -48,7 +48,7 @@ const Logo = styled.img`
 `;
 
 const WelcomeText = styled.h1`
-  font-size: 24px;
+  font-size: 35px;
   color: #3f2c8a;
   margin-bottom: 3rem;
   text-align: center;
@@ -104,15 +104,28 @@ const AstronautImage = styled.img`
   }
 `;
 
+const ErrorText = styled.p`
+  color: red;
+  font-size: 14px;
+  margin-top: -10px; // Input ostida xatoni ko'rsatish uchun
+`;
+
 // React Component
-const LoginForm = () => {
-  const [phone, setPhone] = useState("");
+const LoginForm = ({ setIsAuthenticated }) => {
+  const [phone, setPhone] = useState("+998");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMessages, setErrorMessages] = useState({
+    phone: "",
+    password: "",
+  }); // Xatolar uchun holat
   const navigate = useNavigate(); // useNavigate hook'ini chaqiramiz
 
   const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
+    // Agar telefon raqami "+" dan boshlansa, davom ettiradi
+    if (e.target.value.length <= 13) {
+      setPhone(e.target.value);
+    }
   };
 
   const handlePasswordChange = (e) => {
@@ -128,16 +141,23 @@ const LoginForm = () => {
     const isPhoneValid = phonePattern.test(phone);
     const isPasswordValid = password.length >= 6;
 
-    // Agar ma'lumotlar to'g'ri bo'lsa, /home ga o'tkazamiz
-    if (isPhoneValid && isPasswordValid) {
-      navigate("/home");
+    const newErrorMessages = { phone: "", password: "" }; // Xato xabarlari uchun yangi obyekt
+
+    if (!isPhoneValid) {
+      newErrorMessages.phone =
+        "To'g'ri telefon raqamini kiriting! (+998XXXXXXXXX)";
+    }
+    if (!isPasswordValid) {
+      newErrorMessages.password =
+        "Parol kamida 6 ta belgidan iborat bo'lishi kerak!";
+    }
+
+    // Agar xatolar mavjud bo'lsa, yangilash
+    if (!isPhoneValid || !isPasswordValid) {
+      setErrorMessages(newErrorMessages);
     } else {
-      if (!isPhoneValid) {
-        alert("To'g'ri telefon raqamini kiriting!");
-      }
-      if (!isPasswordValid) {
-        alert("Parol kamida 6 ta belgidan iborat bo'lishi kerak!");
-      }
+      setIsAuthenticated(true); // Avtorizatsiya holatini o'zgartirish
+      navigate("/home");
     }
   };
 
@@ -153,11 +173,13 @@ const LoginForm = () => {
           <InputWrapper>
             <Input
               type="tel"
-              placeholder="+998"
+              placeholder="Telefon raqami"
               value={phone}
               onChange={handlePhoneChange}
             />
           </InputWrapper>
+          {errorMessages.phone && <ErrorText>{errorMessages.phone}</ErrorText>}{" "}
+          {/* Xato xabari */}
           <InputWrapper>
             <Input
               type={showPassword ? "text" : "password"}
@@ -169,6 +191,10 @@ const LoginForm = () => {
               {showPassword ? "🙈" : "👁️"}
             </EyeIcon>
           </InputWrapper>
+          {errorMessages.password && (
+            <ErrorText>{errorMessages.password}</ErrorText>
+          )}{" "}
+          {/* Xato xabari */}
           <Button onClick={validateInputs}>Kirish</Button>
         </Left>
         <AstronautImage src={Photo} alt="Astronaut" />

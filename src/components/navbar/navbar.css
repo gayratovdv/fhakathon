@@ -1,0 +1,65 @@
+/* navbar.css */
+
+nav {
+  background-color: white; /* Yengil fon rangi */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Yumshoq soyali effekt */
+  padding: 15px 0; /* Yuqori va pastki bo'shliq */
+}
+
+.container {
+  max-width: 1200px; /* Maksimal kenglik */
+  margin: 0 auto; /* Markazlashtirish */
+  padding: 0 20px; /* Chap va o'ng bo'shliqlar */
+}
+
+.navbar {
+  display: flex; /* Flex model */
+  justify-content: space-between; /* O'ng va chap tomonlarni joylashtirish */
+  align-items: center; /* Vertikal markazlashtirish */
+}
+
+.navbar img {
+  height: 50px; /* Logo balandligi */
+  transition: transform 0.3s; /* Transformatsiya animatsiyasi */
+}
+
+.navbar img:hover {
+  transform: scale(1.05); /* Hover effekti */
+}
+
+.navbar__right {
+  display: flex; /* Flex model */
+  align-items: center; /* Vertikal markazlashtirish */
+}
+
+select {
+  margin-right: 20px; /* Tanlov elementi va ism orasidagi bo'shliq */
+  border: 1px solid #ced4da; /* Tanlov elementining chekkasi */
+  border-radius: 5px; /* Yumshoq burchaklar */
+  padding: 8px; /* Ichki bo'shliq */
+  font-size: 16px; /* Shrift o'lchami */
+  cursor: pointer; /* Kursor o'zgarishi */
+  transition: border-color 0.3s; /* Chekka rangining animatsiyasi */
+}
+
+select:hover {
+  border-color: #80bdff; /* Hover effekti */
+}
+
+p {
+  margin: 0 15px; /* P elementining bo'shligi */
+  font-weight: bold; /* Qalin yozuv */
+  font-size: 18px; /* Shrift o'lchami */
+  color: #343a40; /* Matn rangi */
+}
+
+.navbar__right svg {
+  font-size: 24px; /* Ikonka o'lchami */
+  color: #343a40; /* Ikonka rangi */
+  cursor: pointer; /* Kursor o'zgarishi */
+  transition: transform 0.3s; /* Ikonka animatsiyasi */
+}
+
+.navbar__right svg:hover {
+  transform: scale(1.1); /* Ikonka hover effekti */
+}

@@ -1,0 +1,13 @@
+.group-card {
+  width: 88%;
+  height: 552px;
+  border-radius: 32px;
+  background: #d9d9d9;
+  margin: 40px 50px;
+}
+
+.group__content {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
