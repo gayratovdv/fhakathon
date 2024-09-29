@@ -22,13 +22,7 @@ const App = () => {
           element={
             <Privite_route isAuthenticated={isAuthenticated}>
               <Navbar />
-            </Privite_route>
-          }
-        />
-        <Route
-          path="/home/groups"
-          element={
-            <Privite_route isAuthenticated={isAuthenticated}>
+
               <GroupsPage />
             </Privite_route>
           }
@@ -37,6 +31,8 @@ const App = () => {
           path="/home/homeworks"
           element={
             <Privite_route isAuthenticated={isAuthenticated}>
+              <Navbar />
+
               <Homework />
             </Privite_route>
           }
