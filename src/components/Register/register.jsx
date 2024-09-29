@@ -111,7 +111,7 @@ const ErrorText = styled.p`
 `;
 
 // React Component
-const LoginForm = ({ setIsAuthenticated }) => {
+const Register = ({ setIsAuthenticated }) => {
   const [phone, setPhone] = useState("+998");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -203,4 +203,4 @@ const LoginForm = ({ setIsAuthenticated }) => {
   );
 };
 
-export default LoginForm;
+export default Register;

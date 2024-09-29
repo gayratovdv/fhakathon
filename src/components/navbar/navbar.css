@@ -57,3 +57,80 @@ p {
 .navbar__right svg:hover {
   transform: scale(1.1); /* Ikonka hover effekti */
 }
+/* navbar.css */
+
+/* Boshqa kodlar... */
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px; /* Yuqori va pastki bo'shliqni o'zgartirish */
+  }
+
+  .navbar img {
+    height: 50px; /* Logo balandligini saqlash */
+  }
+
+  select {
+    margin-right: 20px; /* Tanlov elementi va ism orasidagi bo'shliq */
+    padding: 10px; /* Ichki bo'shliqni kengaytirish */
+    font-size: 16px; /* Shrift o'lchamini saqlash */
+  }
+
+  p {
+    font-size: 18px; /* Matn o'lchamini saqlash */
+  }
+
+  .navbar__right svg {
+    font-size: 26px; /* Ikonka o'lchamini saqlash */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Vertikal joylashtirish */
+    align-items: flex-start; /* Chapga markazlashtirish */
+    padding: 10px; /* Yuqori va pastki bo'shliqni kamaytirish */
+  }
+
+  .navbar img {
+    height: 45px; /* Kichik ekranlar uchun logo balandligi */
+  }
+
+  select {
+    margin: 10px 0; /* Tanlov elementining yuqori va pastki bo'shligini qo'shish */
+    width: 100%; /* Kichik ekranlarda to'liq kenglik */
+  }
+
+  p {
+    font-size: 16px; /* Matn o'lchamini kichiklashtirish */
+  }
+
+  .navbar__right {
+    width: 100%; /* O'ng tomonni to'liq kenglikda ko'rsatish */
+    display: flex; /* Flex model */
+    justify-content: space-between; /* Joylashtirish */
+    align-items: center; /* Vertikal markazlashtirish */
+  }
+
+  .navbar__right svg {
+    font-size: 24px; /* Ikonka o'lchamini kichiklashtirish */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px; /* Yuqori va pastki bo'shliqni kamaytirish */
+  }
+
+  .navbar img {
+    height: 40px; /* Oltinchi ekranlarda logo balandligini kamaytirish */
+  }
+
+  p {
+    font-size: 14px; /* Matn o'lchamini yana kichiklashtirish */
+  }
+
+  .navbar__right svg {
+    font-size: 22px; /* Ikonka o'lchamini yana kichiklashtirish */
+  }
+}

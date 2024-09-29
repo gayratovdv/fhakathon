@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Styled components
@@ -6,6 +6,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  width: 90%;
   background-color: #f0f4f8;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -48,62 +49,108 @@ const Table = styled.table`
 `;
 
 const Status = styled.span`
+  position: relative;
   padding: 5px 10px;
   border-radius: 5px;
   color: white;
   font-weight: bold;
   background-color: ${(props) =>
-    props.status === "Checked"
+    props.status === "TEKSHIRILDI"
       ? "green"
-      : props.status === "Denied"
-      ? "red"
-      : "orange"};
+      : props.status === "TEKSHIRILMAGAN"
+      ? "orange"
+      : "red"};
+  cursor: pointer;
+
+  &:hover .dropdown {
+    display: block;
+  }
+`;
+
+const Dropdown = styled.div`
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  z-index: 1;
+  min-width: 120px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+`;
+
+const DropdownItem = styled.div`
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #333;
+
+  &:hover {
+    background-color: #007bff;
+    color: white;
+  }
 `;
 
 // Main component
 const Homework = () => {
-  const students = [
+  const [students, setStudents] = useState([
     {
       name: "Botirov Muhammadali",
-      status: "Not Checked",
+      status: "TEKSHIRILMAGAN",
       mark: "-",
       comment: "-",
     },
     {
       name: "Hasanov Zubayrxon",
-      status: "Not Uploaded",
+      status: "YUKLANMAGAN",
       mark: "-",
       comment: "-",
     },
     {
       name: "Jaloliddin Inomov",
-      status: "Not Uploaded",
+      status: "YUKLANMAGAN",
       mark: "-",
       comment: "-",
     },
-    { name: "Jaloliddin Inomov", status: "Checked", mark: 100, comment: "-" },
-    { name: "Mirzohidov Umidjon", status: "Denied", mark: 0, comment: "-" },
-    { name: "Safarov Sanjar", status: "Not Uploaded", mark: "-", comment: "-" },
+    {
+      name: "Jaloliddin Inomov",
+      status: "TEKSHIRILDI",
+      mark: 100,
+      comment: "-",
+    },
+    {
+      name: "Mirzohidov Umidjon",
+      status: "TEKSHIRILMAGAN",
+      mark: 0,
+      comment: "-",
+    },
+    { name: "Safarov Sanjar", status: "YUKLANMAGAN", mark: "-", comment: "-" },
     {
       name: "Samir Sadullayev",
-      status: "Not Uploaded",
+      status: "YUKLANMAGAN",
       mark: "-",
       comment: "-",
     },
-    { name: "Sherzod Skandaro", status: "Checked", mark: 75, comment: "-" },
+    { name: "Sherzod Skandaro", status: "TEKSHIRILDI", mark: 75, comment: "-" },
     {
       name: "Suxrob Sadullayev",
-      status: "Not Checked",
+      status: "TEKSHIRILMAGAN",
       mark: "-",
       comment: "-",
     },
     {
       name: "Elshod Turgunjonov",
-      status: "Not Uploaded",
+      status: "YUKLANMAGAN",
       mark: "-",
       comment: "-",
     },
-  ];
+  ]);
+
+  const updateStatus = (index, newStatus) => {
+    const updatedStudents = [...students];
+    updatedStudents[index].status =
+      newStatus === "DENIED" ? "TEKSHIRILMAGAN" : newStatus;
+    setStudents(updatedStudents);
+  };
 
   return (
     <Container>
@@ -124,7 +171,21 @@ const Homework = () => {
               <tr key={index}>
                 <td>{student.name}</td>
                 <td>
-                  <Status status={student.status}>{student.status}</Status>
+                  <Status status={student.status}>
+                    {student.status}
+                    <Dropdown className="dropdown">
+                      {["TEKSHIRILDI", "TEKSHIRILMAGAN", "YUKLANMAGAN"].map(
+                        (status) => (
+                          <DropdownItem
+                            key={status}
+                            onClick={() => updateStatus(index, status)}
+                          >
+                            {status}
+                          </DropdownItem>
+                        )
+                      )}
+                    </Dropdown>
+                  </Status>
                 </td>
                 <td>{student.mark}</td>
                 <td>{student.comment}</td>
