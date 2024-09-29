@@ -6,9 +6,8 @@ import "./groups.css";
 
 const GroupsPage = () => {
   return (
-    <div>
+    <div style={{ width: "90%" }}>
       <div className="main-content">
-        <Sidebar />
         <GroupCard />
       </div>
     </div>

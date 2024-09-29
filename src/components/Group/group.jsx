@@ -1,7 +1,7 @@
 import React from "react";
 import "./group.css";
 import Images from "../../utils/images";
-
+import { Link } from "react-router-dom";
 const GroupCard = () => {
   return (
     <div className="group-card">
@@ -25,7 +25,10 @@ const GroupCard = () => {
             <h3>Время</h3>
             <p>17:00</p>
           </div>
-          <button className="group__card--card-button">Проверять</button>
+          <button className="group__card--card-button">
+            {" "}
+            <Link to="/home/homeworks">Проверять</Link>
+          </button>
         </div>
         <div className="group__card--card">
           <div className="group__card--card-content">
@@ -41,7 +44,10 @@ const GroupCard = () => {
             <h3>Время</h3>
             <p>17:00</p>
           </div>
-          <button className="group__card--card-button">Проверять</button>
+          <button className="group__card--card-button">
+            {" "}
+            <Link to="/home/homeworks">Проверять</Link>
+          </button>
         </div>
         <div className="group__card--card">
           <div className="group__card--card-content">
@@ -57,7 +63,10 @@ const GroupCard = () => {
             <h3>Время</h3>
             <p>17:00</p>
           </div>
-          <button className="group__card--card-button">Проверять</button>
+          <button className="group__card--card-button">
+            {" "}
+            <Link to="/home/homeworks">Проверять</Link>
+          </button>
         </div>
         <div className="group__card--card">
           <div className="group__card--card-content">
@@ -73,7 +82,9 @@ const GroupCard = () => {
             <h3>Время</h3>
             <p>17:00</p>
           </div>
-          <button className="group__card--card-button">Проверять</button>
+          <button className="group__card--card-button">
+            <Link to="/home/homeworks">Проверять</Link>
+          </button>
         </div>
       </div>
     </div>

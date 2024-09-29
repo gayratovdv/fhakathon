@@ -5,40 +5,51 @@ import Privite_route from "./components/Register/Privite_route";
 import Navbar from "./components/navbar/Navbar";
 import GroupsPage from "./pages/Groups/group";
 import Homework from "./components/Homework/Homework";
+import Sidebar from "./components/Sidebar/sidebar";
+import styled from "styled-components";
+
+// Styled Component
+const Center = styled.div`
+  display: flex;
+  align-items: stretch; /* Vertical alignment */
+  justify-content: space-between;
+`;
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
-    <>
-      <Routes>
-        <Route
-          path="/"
-          element={<Register setIsAuthenticated={setIsAuthenticated} />}
-        />
+    <Routes>
+      <Route
+        path="/"
+        element={<Register setIsAuthenticated={setIsAuthenticated} />}
+      />
 
-        <Route
-          path="/home"
-          element={
-            <Privite_route isAuthenticated={isAuthenticated}>
-              <Navbar />
-
+      <Route
+        path="/home"
+        element={
+          <Privite_route isAuthenticated={isAuthenticated}>
+            <Navbar />
+            <Center>
+              <Sidebar />
               <GroupsPage />
-            </Privite_route>
-          }
-        />
-        <Route
-          path="/home/homeworks"
-          element={
-            <Privite_route isAuthenticated={isAuthenticated}>
-              <Navbar />
-
+            </Center>
+          </Privite_route>
+        }
+      />
+      <Route
+        path="/home/homeworks"
+        element={
+          <Privite_route isAuthenticated={isAuthenticated}>
+            <Navbar />
+            <Center>
+              <Sidebar />
               <Homework />
-            </Privite_route>
-          }
-        />
-      </Routes>
-    </>
+            </Center>
+          </Privite_route>
+        }
+      />
+    </Routes>
   );
 };
 
