@@ -4,6 +4,7 @@ import Register from "./components/Register/Register";
 import Privite_route from "./components/Register/Privite_route";
 import Navbar from "./components/navbar/Navbar";
 import GroupsPage from "./pages/Groups/group";
+import Homework from "./components/Homework/Homework";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -21,7 +22,22 @@ const App = () => {
           element={
             <Privite_route isAuthenticated={isAuthenticated}>
               <Navbar />
+            </Privite_route>
+          }
+        />
+        <Route
+          path="/home/groups"
+          element={
+            <Privite_route isAuthenticated={isAuthenticated}>
               <GroupsPage />
+            </Privite_route>
+          }
+        />
+        <Route
+          path="/home/homeworks"
+          element={
+            <Privite_route isAuthenticated={isAuthenticated}>
+              <Homework />
             </Privite_route>
           }
         />
