@@ -2,6 +2,7 @@ import React from "react";
 import "./navbar.css";
 import Images from "../../utils/images";
 import { IoIosLogOut } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -11,13 +12,13 @@ const Navbar = () => {
           <img src={Images.navbarLogo} alt="Navbar Logo1" />
           <div className="navbar__right">
             <select>
+              <option value="1">Ru</option>
               <option selected value="1">
-                Ru
+                Uz
               </option>
-              <option value="1">Uz</option>
             </select>
             <p>Sunnatbek Yusupov</p>
-            <IoIosLogOut />
+            <Link style={{color: "black", textdecoration: "none"}} to="/"> <IoIosLogOut /></Link>
           </div>
         </div>
       </div>

@@ -43,18 +43,6 @@ const SidebarIcon = styled.div`
 // Main Sidebar Component
 const Sidebar = () => {
   return (
-<<<<<<< HEAD
-    <div className="sidebar">
-      <ul className="sidebar__list">
-        <li className="active">
-          <img src={Images.groupImage} alt="Image1" />
-          Boshqaruv paneli
-        </li>
-        <li>
-          <img src={Images.salaryImage} alt="Image1" />Ish haqi</li>
-      </ul>
-    </div>
-=======
     <SidebarContainer>
       <SidebarItem to="/home/students" activeClassName="active">
         <SidebarIcon>💰</SidebarIcon>
@@ -69,7 +57,6 @@ const Sidebar = () => {
         Metatalogiya
       </SidebarItem>
     </SidebarContainer>
->>>>>>> db3781506288785f3f5098656a8e9df163d5e0fd
   );
 };
 
