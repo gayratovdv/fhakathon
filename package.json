@@ -1,5 +1,5 @@
 {
-  "homepage": "https://fhakathon.github.io/fhakathon",
+  "homepage": "https://fhakathon.github.io/fhakathon//",
   "name": "fhakathon",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build", 
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
