@@ -20,7 +20,7 @@ const Navbar = () => {
             <p>Sunnatbek Yusupov</p>
             <Link
               style={{ color: "black", textdecoration: "none" }}
-              to="https://gayratovdv.github.io/fhakathon/"
+              to="/"
             >
               {" "}
               <IoIosLogOut />
