@@ -6,12 +6,6 @@ nav {
   padding: 15px 0; /* Yuqori va pastki bo'shliq */
 }
 
-.container {
-  max-width: 1200px; /* Maksimal kenglik */
-  margin: 0 auto; /* Markazlashtirish */
-  padding: 0 20px; /* Chap va o'ng bo'shliqlar */
-}
-
 .navbar {
   display: flex; /* Flex model */
   justify-content: space-between; /* O'ng va chap tomonlarni joylashtirish */

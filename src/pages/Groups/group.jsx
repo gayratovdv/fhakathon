@@ -7,7 +7,6 @@ import "./groups.css";
 const GroupsPage = () => {
   return (
     <div>
-      <Navbar />
       <div className="main-content">
         <Sidebar />
         <GroupCard />
